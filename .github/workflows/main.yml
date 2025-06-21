@@ -22,12 +22,9 @@ jobs:
           cache-dependency-path: pnpm-lock.yaml # 指定 pnpm 锁文件路径（可选）
 
       - name: Install pnpm via corepack
-        env:
-          # 方案1：跳过签名验证（推荐）
-          COREPACK_SKIP_SIGNATURE_CHECK: 1
         run:
           corepack enable
-#          corepack install pnpm  # 会根据 package.json 中的 packageManager 字段自动安装指定版本
+          corepack install pnpm@10.10.0  # 会根据 package.json 中的 packageManager 字段自动安装指定版本
 
       - name: Install dependencies # 安装项目依赖
         run: pnpm install
