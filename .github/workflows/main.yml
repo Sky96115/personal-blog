@@ -24,7 +24,7 @@ jobs:
       - name: Install pnpm via corepack
         run: |
           corepack enable
-          corepack install pnpm@10.10.0  # 会根据 package.json 中的 packageManager 字段自动安装指定版本
+          corepack prepare pnpm@10.10.0 --activate  # 会根据 package.json 中的 packageManager 字段自动安装指定版本
 
       - name: Install dependencies # 安装项目依赖
         run: pnpm install
