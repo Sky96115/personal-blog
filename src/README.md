@@ -5,7 +5,7 @@ icon: house
 title: 博客主页
 heroImage: "/w-cat.svg" # 首页中心图标
 heroImageDark: "/b-cat.svg"
-heroText: 你博客的名称
+heroText: cheniy的博客
 heroFullScreen: true # 背景图片全屏
 tagline: 你可以在这里放置你的口号与标语
 projects:
