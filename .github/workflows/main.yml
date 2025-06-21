@@ -1,0 +1,45 @@
+name: Deploy Blog Pages
+
+on:
+  push:
+    branches: [ "master" ] # 推送到master分支时触发
+  pull_request:
+    branches: [ "master" ] # 合并也触发
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22.7.0' # node 版本根据直接项目调整
+          cache: 'pnpm' # 缓存，也可以是npm（可选） 
+          cache-dependency-path: pnpm-lock.yaml # 指定 pnpm 锁文件路径（可选） 
+        run: corepack enable # 启用 corepack（自动安装 pnpm）, npm 忽略
+
+      - name: Install dependencies # 安装项目依赖
+        run: pnpm install
+
+      - name: Build #构建项目
+        run: pnpm run docs:build
+
+      - name: Deploy to Nginx Server
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+          REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan $SSH_HOST >> ~/.ssh/known_hosts
+          #scp -r ./docs/.vuepress/dist/* $SSH_USERNAME@$SSH_HOST:$REMOTE_PATH
+          sshpass -p $SSH_PASSWORD scp -r ./dev/nginx/html/* root@$SSH_HOST:$REMOTE_PATH
