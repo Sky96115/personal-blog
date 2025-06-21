@@ -19,12 +19,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22.7.0' # node 版本根据直接项目调整
+          cache-dependency-path: pnpm-lock.yaml # 指定 pnpm 锁文件路径（可选）
+
 
       - name: Install dependencies # 安装项目依赖
-        run: npm install
+        run: pnpm install
 
       - name: Build #构建项目
-        run: npm run docs:build
+        run: pnpm run docs:build
 
       - name: Deploy to Nginx Server
         env:
