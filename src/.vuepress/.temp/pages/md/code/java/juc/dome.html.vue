@@ -1,6 +1,6 @@
 <template><div><h3 id="任务" tabindex="-1"><a class="header-anchor" href="#任务"><span>任务</span></a></h3>
 <ul class="task-list-container">
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-0" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-0"> 在应用层编排抽奖过程</label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-0" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-0"> 在应用层编排抽奖过程的修改</label></li>
 </ul>
 <h3 id="总结" tabindex="-1"><a class="header-anchor" href="#总结"><span>总结</span></a></h3>
 <p>今天的内容比较简单，最主要的问题就是表改了，然后花了很多时间去改对应的 PO 以及 SQL，然后今天第一次开发 application 层，感觉就是把 domain 层各个领域进行组装，然后形成一个又一个的流程，在这里面会使用 MQ 把流程进行切片，之后写门面接口应该就是调 application 层里面各个流程了，这样对于 Controller 层感觉挺好的，只需要简单的封装一下前端传进来的参数，然后调用 application 层执行各个流程就可以了</p>
