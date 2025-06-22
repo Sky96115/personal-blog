@@ -2,9 +2,9 @@ name: Deploy Blog Pages
 
 on:
   push:
-    branches: [ "main" ] # 推送到master分支时触发
+    branches: [ "master" ] # 推送到master分支时触发
   pull_request:
-    branches: [ "main" ] # 合并也触发
+    branches: [ "master" ] # 合并也触发
 
 jobs:
   build-and-deploy:
