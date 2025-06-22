@@ -1,6 +1,5 @@
 ---
 title: 项目库
-index: false
 icon: laptop-code
 category:
   - 自我介绍
@@ -9,20 +8,20 @@ category:
 ---
 ## 任务
 
-- [x] 环境配置
-- [x] 搭建项目结构
-- [x] 跑通广播模式 RPC 过程调用
+- [X]  环境配置
+- [X]  搭建项目结构
+- [X]  跑通广播模式 RPC 过程调用
 
 ## 学习过程
 
 1. 项目整体了解
 
    通过对第一节文档的阅读，了解整个项目的生命周期、所需要的技术以及代码提交规范
-
 2. 搭建项目结构，理解每个模块应该干什么
 
+
    | 模块                   | 作用                                                         |
-      | ---------------------- | ------------------------------------------------------------ |
+   | ---------------------- | ------------------------------------------------------------ |
    | Lottery                | 总项目，用来管理整个项目的依赖                               |
    | lottery-application    | 应用层，为用户接口层提供各种应用数据展现支持服务             |
    | lottery-common         | 定义通用数据，比如统一响应数据、常量、异常、枚举等           |
@@ -31,41 +30,39 @@ category:
    | lottery-interfaces     | 用户接口层，存放与前端交互、展现数据相关的代码               |
    | lottery-rpc            | RPC 接口文件                                                 |
 
-   > 注：因为并不了解 DDD 架构，所以每个模块目前只有模糊的概念，具体的东西在后续代码编写中进行体会
 
+   > 注：因为并不了解 DDD 架构，所以每个模块目前只有模糊的概念，具体的东西在后续代码编写中进行体会
+   >
 3. 阅读 [210801_xfg_initProject](https://gitcode.net/KnowledgePlanet/Lottery/-/tree/210801_xfg_initProject) 分支上的 POM 文件
 
    通过对 POM 文件的阅读，更加清楚的了解这个项目所使用的技术，并且通过阅读发现项目没有添加 Lombok 来简化开发，具体项目开发是否使用这个插件我不知道，但是我想用，因为我**懒**，所以就给加上了😄
-
 4. 跑通 RPC
 
-    1. 定义 response 状态码枚举供通用返回对象 Result 进行使用
-    2. 定义通用返回对象 Result 类
-    3. 定义 activity 表的持久化对象
-    4. 定义 activity 表的 Mapper 接口
-    5. 定义 mybatis 配置文件
-    6. 定义 activity 表的 mapper.xml 文件
-    7. 定义 rpc 的数据传输对象(DTO) ActivityDto
-    8. 定义 rpc 的 请求对象 ActivityReq
-    9. 定义 rpc 的响应对象 ActivityRes
-    10. 定义 rpc 接口 IActivityBooth
-    11. 实现 IActivityBooth 接口
-    12. 编写启动类
-    13. 编写配置文件 application.yml
-    14. 编写测试模块 **这个我是直接加在工程里面的，教程是单独开了一个项目**
+   1. 定义 response 状态码枚举供通用返回对象 Result 进行使用
+   2. 定义通用返回对象 Result 类
+   3. 定义 activity 表的持久化对象
+   4. 定义 activity 表的 Mapper 接口
+   5. 定义 mybatis 配置文件
+   6. 定义 activity 表的 mapper.xml 文件
+   7. 定义 rpc 的数据传输对象(DTO) ActivityDto
+   8. 定义 rpc 的 请求对象 ActivityReq
+   9. 定义 rpc 的响应对象 ActivityRes
+   10. 定义 rpc 接口 IActivityBooth
+   11. 实现 IActivityBooth 接口
+   12. 编写启动类
+   13. 编写配置文件 application.yml
+   14. 编写测试模块 **这个我是直接加在工程里面的，教程是单独开了一个项目**
 
 ## 遇到的问题
 
 1. 代码分层不清晰，不知道每个模块应该干什么事
 
    这个问题该怎么解决呢？我觉得最好的解决办法就是不解决，哈哈哈，因为当初学 MVC 的时候最开始也不清楚为什么要这样分层，为什么就要分 Controller、Service 和 DAO，但是后来经过大量代码的编写，也逐渐熟悉了这样的分层架构，所以现在并不想解决这个问题，具体还是靠后面的代码进行了解和熟悉吧
-
 2. JSON.toJSonString() 方法返回了空 `{}`
 
    问题出现原因，忘了加 `@Data` 注解，导致没有 `getter/setter` 就导致了这个问题，加上注解即可
 
    解决！
-
 3. 数据库乱码问题
 
    测试模块 RPC 远程调用返回的结果为:

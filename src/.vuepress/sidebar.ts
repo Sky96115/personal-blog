@@ -17,19 +17,19 @@ export default sidebar({
     // 申明一级目录
     "java/",
   ],
-  "/md/code/java/": 
+  "/md/code/java/": "structure",
   // 申明二级目录
-  [
-    "",
-    {
-      text: "多线程",
-      icon: "laptop-code",
-      link: "juc/",
-      prefix: "juc/",
-      collapsible: true,
-      children: ["dome.md"],
-    }
-  ],
+  // [
+  //   "",
+  //   {
+  //     text: "多线程",
+  //     icon: "laptop-code",
+  //     link: "juc/",
+  //     prefix: "juc/",
+  //     collapsible: true,
+  //     children: ["dome.md"],
+  //   }
+  // ],
 
   // ------------------------教程手册-----------------------------
   "/md/guide/": 
@@ -38,19 +38,19 @@ export default sidebar({
     "",
     "mygit/",
   ],
-  "/md/guide/mygit/": 
+  "/md/guide/mygit/": "structure",
   // 申明二级目录
-  [
-    "",
-    {
-      text: "码云",
-      icon: "laptop-code",
-      link: "giteee/",
-      prefix: "giteee/",
-      collapsible: true,
-      children: ["dome.md"],
-    }
-  ],
+  // [
+  //   "",
+  //   {
+  //     text: "码云",
+  //     icon: "laptop-code",
+  //     link: "giteee/",
+  //     prefix: "giteee/",
+  //     collapsible: true,
+  //     children: ["dome.md"],
+  //   }
+  // ],
 
   // ------------------------学习笔记-----------------------------
   "/md/study/": 
@@ -66,32 +66,32 @@ export default sidebar({
     "",
     "java/",
   ],
-  "/md/project/market/": 
+  "/md/project/market/": "structure",
   // 申明二级目录
-  [
-    "",
-    {
-      text: "设计开发",
-      icon: "laptop-code",
-      link: "design/",
-      prefix: "design/",
-      collapsible: true,
-    },
-    {
-      text: "开发日志",
-      icon: "laptop-code",
-      link: "log/",
-      prefix: "log/",
-      collapsible: true,
-    },
-    {
-      text: "BUG笔记",
-      icon: "laptop-code",
-      link: "bug/",
-      prefix: "bug/",
-      collapsible: true,
-    },
-  ],
+  // [
+  //   "",
+  //   {
+  //     text: "设计开发",
+  //     icon: "laptop-code",
+  //     link: "design/",
+  //     prefix: "design/",
+  //     collapsible: true,
+  //   },
+  //   {
+  //     text: "开发日志",
+  //     icon: "laptop-code",
+  //     link: "log/",
+  //     prefix: "log/",
+  //     collapsible: true,
+  //   },
+  //   {
+  //     text: "BUG笔记",
+  //     icon: "laptop-code",
+  //     link: "bug/",
+  //     prefix: "bug/",
+  //     collapsible: true,
+  //   },
+  // ],
 
   
   

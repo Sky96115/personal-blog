@@ -11,7 +11,7 @@ export default hopeTheme({
   author: {
     name: "cheniy",
     // 作者博客网站
-    url: "https://mister-hope.com",
+    url: "https://mister",
   },
 
   logo: "/logo01.png",
