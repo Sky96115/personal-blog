@@ -5,7 +5,7 @@ import sidebar from "./sidebar.js";
 
 export default hopeTheme({
   // 项目部署的域名
-  hostname: "https://mister-hope.github.io", 
+  hostname: "https://github.com/Sky96115/personal-blog",
   
   // 作者信息
   author: {
